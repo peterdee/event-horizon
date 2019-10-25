@@ -10,11 +10,11 @@ let counter = 0;
   while (true) {
     const pre = Date.now();
     try {
+      counter += 1;
       await axios({
         method: 'GET',
         url: '',
       });
-      counter += 1;
       console.log(`-- it's fine, request #${counter}, delay: ${Date.now() - pre} ms`);
     } catch (err) {
       console.log(`-- done after ${counter} requests, delay: ${Date.now() - pre} ms \n${err}`);
